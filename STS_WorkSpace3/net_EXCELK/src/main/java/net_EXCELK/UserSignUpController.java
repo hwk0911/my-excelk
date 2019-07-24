@@ -16,7 +16,7 @@ public class UserSignUpController {
 	@PostMapping("/create")
 	public String create(Users users){
 		user.add(users);
-		System.out.print(users);
+		System.out.println(users);
 		return "redirect:/list";
 	}
 	
