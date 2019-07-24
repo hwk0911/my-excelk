@@ -1,13 +1,13 @@
-package com.example.demo;
+package net_EXCELK;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NetExcelkWindows10Application {
+public class NetExcelkApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NetExcelkWindows10Application.class, args);
+		SpringApplication.run(NetExcelkApplication.class, args);
 	}
 
 }
