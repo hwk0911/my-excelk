@@ -1,7 +1,20 @@
 package net_EXCELK;
 
-public class Users {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class User {
+	@Id	
+	@GeneratedValue
+	private Long id;
+	
+	@Column(nullable=false, length=20)
 	private String userId;
+		
+	@Column(nullable=false, length=20)
 	private String passWd;
 	private String name;
 	private String email;

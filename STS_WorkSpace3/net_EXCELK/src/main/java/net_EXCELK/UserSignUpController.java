@@ -1,28 +1,34 @@
 package net_EXCELK;
 
-
-import java.util.ArrayList;
-import java.util.List;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/users")
 public class UserSignUpController {
-	private List<Users> user = new ArrayList<Users>();
 	
-	@PostMapping("/create")
-	public String create(Users users){
-		user.add(users);
-		System.out.println(users);
-		return "redirect:/list";
+	@Autowired
+	private UserRepository userRepository;
+	
+	@GetMapping("/form")
+	public String form(){
+		return "/user/form/";
 	}
 	
-	@GetMapping("/list")
+	@PostMapping("")
+	public String create(User user){
+		System.out.println(user);
+		userRepository.save(user);
+		return "redirect:/users";
+	}
+	
+	@GetMapping("")
 	public String list(Model model){
-		model.addAttribute("users", user);
-		return "list";
+		model.addAttribute("users", userRepository.findAll());
+		return "/user/list";
 	}
 }
