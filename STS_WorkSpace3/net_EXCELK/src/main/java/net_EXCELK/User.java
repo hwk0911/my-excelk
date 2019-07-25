@@ -33,9 +33,16 @@ public class User {
 		this.email = email;
 	}
 	
+	public void update(User newUser) {
+		// TODO Auto-generated method stub
+		this.passWd = newUser.passWd;
+		this.name = newUser.name;
+		this.email = newUser.email;
+	}	
+	
 	@Override
 	public String toString() {
 		return "Users [userId=" + userId + ", passWd=" + passWd + ", name=" + name + ", email=" + email + "]";
-	}	
+	}
 	
 }
