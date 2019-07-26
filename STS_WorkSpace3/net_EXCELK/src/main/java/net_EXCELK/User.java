@@ -40,6 +40,10 @@ public class User {
 		this.email = newUser.email;
 	}	
 	
+	public String getPassWd(){
+		return passWd;
+	}
+	
 	@Override
 	public String toString() {
 		return "Users [userId=" + userId + ", passWd=" + passWd + ", name=" + name + ", email=" + email + "]";
