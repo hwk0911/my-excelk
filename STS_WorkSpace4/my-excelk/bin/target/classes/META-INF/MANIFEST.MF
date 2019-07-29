@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: my-excelk
+Implementation-Version: 1.0
+Built-By: CPP
+Implementation-Vendor-Id: net.excelk
+Build-Jdk: 1.8.0_211
+Implementation-URL: https://projects.spring.io/spring-boot/my-excelk/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
