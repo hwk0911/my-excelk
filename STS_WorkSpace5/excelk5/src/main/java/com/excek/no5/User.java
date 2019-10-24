@@ -38,8 +38,12 @@ public class User {
 		this.password = newUser.password;
 		this.email = newUser.email;
 		this.name = newUser.name;
-	}
+	}	
 	
+	public String getPassword() {
+		return this.password;
+	}
+
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", password=" + password + ", name=" + name + ", email=" + email + "]";
