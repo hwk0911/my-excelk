@@ -7,13 +7,13 @@ import javax.persistence.Id;
 
 @Entity
 public class User {
-	@Id	
+	@Id
 	@GeneratedValue
 	private Long id;
-	
-	@Column(nullable=false, length=20, unique=true)
+
+	@Column(nullable = false, length = 20, unique = true)
 	private String userId;
-	
+
 	private String password;
 	private String name;
 	private String email;
@@ -24,6 +24,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public boolean matchPassword(String newPassword) {
+		if (newPassword == null) {
+			return false;
+		}
+
+		return newPassword.equals(password);
 	}
 
 	public void setName(String name) {
@@ -38,21 +46,19 @@ public class User {
 		this.password = newUser.password;
 		this.email = newUser.email;
 		this.name = newUser.name;
-	}	
-	
-	public String getPassword() {
-		return this.password;
 	}
-	
-	public Long getID() {
-		return this.id;
+
+	public boolean matchId(Long newId) {
+		if (newId == null) {
+			return false;
+		}
+
+		return newId.equals(id);
 	}
 
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", password=" + password + ", name=" + name + ", email=" + email + "]";
 	}
-
-	
 
 }
