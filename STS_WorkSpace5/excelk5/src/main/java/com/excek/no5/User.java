@@ -9,13 +9,19 @@ import javax.persistence.Id;
 public class User {
 	@Id
 	@GeneratedValue
+	@Column(name = "ID")
 	private Long id;
 
-	@Column(nullable = false, length = 20, unique = true)
+	@Column(nullable = false, length = 20, unique = true, name = "USER_ID")
 	private String userId;
 
+	@Column(name = "PASSWORD")
 	private String password;
+	
+	@Column(name = "NAME")
 	private String name;
+	
+	@Column(name = "EMAIL")
 	private String email;
 
 	public void setUserId(String userId) {
