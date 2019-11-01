@@ -75,7 +75,7 @@ public class userController {
 
 	@PostMapping("/{id}/update")
 	public String update(@PathVariable Long id, User updatedUser, HttpSession session) {
-		if (SessionUtils.isLoginUser(session))) {
+		if (SessionUtils.isLoginUser(session)) {
 			return "redirect:/users/loginForm";
 		}
 		
